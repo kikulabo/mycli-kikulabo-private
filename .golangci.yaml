@@ -1,0 +1,26 @@
+version: "2"
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/kikulabo/mycli-kikulabo-private
+
+linters:
+  default: standard
+  enable:
+    - errorlint
+    - fatcontext
+    - gocritic
+    - gosec
+    - misspell
+    - modernize
+    - nolintlint
+    - perfsprint
+    - revive
+    - unconvert
+    - unparam
+    - usestdlibvars

@@ -8,36 +8,16 @@
 
 ## 🔄 次にやること (Immediate)
 
-**ここから再開**: Step 1 から順番に進める。
+**ここから再開**: フェーズ 1 から順番に進める。
 
-1. [ ] `mise.toml` を作成する
-   - `[settings] lockfile = true` を設定する
-   - `golangci-lint`・`shfmt`・`shellcheck` のバージョンを固定する（op-vault と同じバージョンで可）
-2. [ ] `mise install` でツールをインストールする
-   - `mise exec -- golangci-lint --version` で動作確認する
-   - `mise exec -- shfmt --version` で動作確認する
-   - `mise exec -- shellcheck --version` で動作確認する
-   - `mise.lock` が生成されていることを確認する
-3. [ ] Go モジュールの初期化
-   - `go mod init github.com/celestial-observability/mycli-XXXX`
-4. [ ] 依存ライブラリの追加
-   - `go get github.com/alecthomas/kong`
-   - `go get go.opentelemetry.io/otel`
-   - `go get go.opentelemetry.io/otel/trace`
-   - `go get go.opentelemetry.io/otel/sdk`
-   - `go get go.opentelemetry.io/otel/exporters/stdout/stdouttrace`
-   - `go get go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp`
-   - `go mod tidy`
-5. [ ] `.gitignore` を作成する
-   - `mycli` バイナリを除外する
-   - `!cmd/mycli` と `!cmd/mycli/*` で cmd/ 以下は追跡対象にする
-6. [ ] `.golangci.yaml` を作成する
-   - フォーマッター: `gofumpt`・`goimports`
-   - `goimports` の `local-prefixes` に `github.com/celestial-observability/mycli-XXXX` を設定する
-   - linters: `default: standard` + 追加有効化（CONCEPT.md 参照）
-7. [ ] ディレクトリ作成
-   - `mkdir -p cmd/mycli internal/cmd internal/tracing scripts .github/workflows`
-8. [ ] `LICENSE` を追加する
+1. [x] `mise.toml` を作成する
+2. [x] `mise install` でツールをインストールする（`mise lock` で `mise.lock` も生成）
+3. [x] Go モジュールの初期化（`github.com/celestial-observability/mycli-kikulabo-private`）
+4. [x] 依存ライブラリの追加・`go mod tidy`
+5. [x] `.gitignore` を作成する
+6. [x] `.golangci.yaml` を作成する
+7. [x] ディレクトリ作成（`cmd/mycli` / `internal/cmd` / `internal/tracing` / `scripts` / `.github/workflows`）
+8. [x] `LICENSE` を追加する
 
 ---
 
