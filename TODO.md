@@ -25,21 +25,14 @@
 
 ### フェーズ 1: エントリーポイントだけで動かす
 
-- [ ] `scripts/e2e.sh` を作成する（`mycli --help` の検証のみ）
-- [ ] `bash scripts/e2e.sh` で FAIL を確認する
-- [ ] `Makefile` を作成する
-  - ターゲット: `fmt` / `sh.fmt` / `lint` / `sh.lint` / `build` / `test` / `e2e` / `up` / `down` / `open` / `clean` / `help`
-  - `fmt` は `golangci-lint fmt` + `make sh.fmt` を呼ぶ
-  - `lint` は `golangci-lint run` + `make sh.lint` を呼ぶ
-  - `sh.fmt` は `mise exec -- shfmt -i 2 -w scripts/`
-  - `sh.lint` は `mise exec -- shellcheck scripts/*.sh`
-- [ ] `compose.yaml` を作成する（Jaeger サービスを定義する）
-- [ ] `cmd/mycli/main.go` を作成する（サブコマンドなし）
-  - 引数なし実行時に `--help` を自動挿入する
-  - `main()` は `os.Exit(run())` のみ
-- [ ] `make e2e` で PASS を確認する
-- [ ] `make lint` で PASS を確認する（lint 設定が機能していることを確認する）
-- [ ] `make fmt` を実行して差分が出ないことを確認する（フォーマット設定が機能していることを確認する）
+- [x] `scripts/e2e.sh` を作成する（`mycli --help` の検証のみ）
+- [x] `bash scripts/e2e.sh` で FAIL を確認する
+- [x] `Makefile` を作成する
+- [x] `compose.yaml` を作成する（Jaeger サービスを定義する）
+- [x] `cmd/mycli/main.go` を作成する（サブコマンドなし）
+- [x] `make e2e` で PASS を確認する
+- [x] `make lint` で PASS を確認する
+- [x] `make fmt` を実行して差分が出ないことを確認する
 
 ### フェーズ 2: hello サブコマンドを追加する
 
