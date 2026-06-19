@@ -64,6 +64,11 @@ run_cmd --help
 expect_exit_code 0 "mycli --help exits 0"
 expect_stdout_contains "mycli" "mycli --help stdout contains 'mycli'"
 
+# Test: mycli hello
+run_cmd hello
+expect_exit_code 0 "mycli hello exits 0"
+expect_stdout_contains "Hello, World!" "mycli hello stdout contains 'Hello, World!'"
+
 # Summary
 echo ""
 printf 'Results: %d passed, %d failed\n' "${PASS}" "${FAIL}"
