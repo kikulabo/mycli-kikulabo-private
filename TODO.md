@@ -36,15 +36,15 @@
 
 ### フェーズ 2: hello サブコマンドを追加する
 
-- [ ] `scripts/e2e.sh` に hello の検証を追加する（テストファースト）
+- [x] `scripts/e2e.sh` に hello の検証を追加する（テストファースト）
   - `mycli hello` の exit 0 を検証する
   - `mycli hello` の stdout に `Hello, World!` が含まれることを検証する
-- [ ] `bash scripts/e2e.sh` で hello のケースが FAIL を確認する
-- [ ] `internal/cmd/hello.go` を作成する（`fmt.Println("Hello, World!")`）
-- [ ] `cmd/mycli/main.go` に `HelloCmd` を追加する
+- [x] `bash scripts/e2e.sh` で hello のケースが FAIL を確認する
+- [x] `internal/cmd/hello.go` を作成する（`fmt.Println("Hello, World!")`）
+- [x] `cmd/mycli/main.go` に `HelloCmd` を追加する
   - `kong.BindFor[context.Context](ctx)` を `kong.Parse` に渡す
-- [ ] `make e2e` で PASS を確認する
-- [ ] `make lint` で PASS を確認する
+- [x] `make e2e` で PASS を確認する
+- [x] `make lint` で PASS を確認する
 
 ### フェーズ 3: OTel 計装を追加する
 
