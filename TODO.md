@@ -48,21 +48,21 @@
 
 ### フェーズ 3: OTel 計装を追加する
 
-- [ ] `scripts/e2e.sh` に OTel の検証を追加する（テストファースト）
+- [x] `scripts/e2e.sh` に OTel の検証を追加する（テストファースト）
   - スクリプト先頭に `START_US` を記録する（Jaeger API でのフィルタリング用）
   - `run_cmd_otlp` ヘルパーを追加する（`MYCLI_TRACES_EXPORTER=otlp MYCLI_OTLP_ENDPOINT=... OTEL_RESOURCE_ATTRIBUTES=''`）
   - コマンドタイムアウトを `perl -e 'alarm N; exec @ARGV'` で実装する（macOS 互換）
   - Jaeger 起動処理を追加する（mise 優先・Docker フォールバック）
   - `expect_trace_span_names` / `expect_trace_status_ok` ヘルパーを追加する
   - テストケースを追加する（CONCEPT.md の一覧参照）
-- [ ] `bash scripts/e2e.sh` で OTel のケースが FAIL を確認する
-- [ ] `internal/tracing/tracer.go` を作成する（`Tracer()` アクセサ）
-- [ ] `internal/tracing/span.go` を作成する（`SetSpanError()` ユーティリティ）
-- [ ] `internal/tracing/init.go` を作成する（TracerProvider・Shutdown・エクスポーター切り替え）
-- [ ] `internal/cmd/hello.go` に Span を追加する
-- [ ] `cmd/mycli/main.go` に OTel 初期化・main Span を追加する
-- [ ] `make e2e` で PASS を確認する
-- [ ] `make lint` で PASS を確認する
+- [x] `bash scripts/e2e.sh` で OTel のケースが FAIL を確認する
+- [x] `internal/tracing/tracer.go` を作成する（`Tracer()` アクセサ）
+- [x] `internal/tracing/span.go` を作成する（`SetSpanError()` ユーティリティ）
+- [x] `internal/tracing/init.go` を作成する（TracerProvider・Shutdown・エクスポーター切り替え）
+- [x] `internal/cmd/hello.go` に Span を追加する
+- [x] `cmd/mycli/main.go` に OTel 初期化・main Span を追加する
+- [x] `make e2e` で PASS を確認する
+- [x] `make lint` で PASS を確認する
 
 ### フェーズ 4: リリースの整備
 
