@@ -1,0 +1,10 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  enabledManagers: ["docker-compose", "github-actions", "mise"],
+  packageRules: [
+    {
+      matchManagers: ["docker-compose", "github-actions", "mise"],
+      minimumReleaseAge: "7 days",
+    },
+  ],
+}
