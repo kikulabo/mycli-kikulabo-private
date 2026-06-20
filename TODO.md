@@ -66,19 +66,19 @@
 
 ### フェーズ 4: リリースの整備
 
-- [ ] `mise.ci.toml` を作成する（`jaeger` のバージョンを固定する）
-- [ ] `MISE_ENV=ci mise install` を実行して `mise.ci.lock` を生成する
-- [ ] `renovate.json5` を作成する
+- [x] `mise.ci.toml` を作成する（`jaeger` のバージョンを固定する）
+- [x] `MISE_ENV=ci mise install` を実行して `mise.ci.lock` を生成する
+- [x] `renovate.json5` を作成する
   - 対象: `docker-compose`・`github-actions`・`mise`
   - クールダウン: `minimumReleaseAge: "7 days"`
-- [ ] `.goreleaser.yaml` を作成する（version: 2）
+- [x] `.goreleaser.yaml` を作成する（version: 2）
   - `goos: [darwin]`・`goarch: [amd64, arm64]`
   - archives の `files` に `LICENSE` を含める
-- [ ] `.github/workflows/ci.yaml` を作成する
+- [x] `.github/workflows/ci.yaml` を作成する
   - `MISE_YES=1` を設定する
   - `lint` / `test` / `e2e` の 3 ジョブを定義する
   - e2e ジョブでは `MISE_ENV=ci` を設定して jaeger を使えるようにする
-- [ ] `.github/workflows/release.yaml` を作成する
+- [x] `.github/workflows/release.yaml` を作成する
   - トリガー: `v*` タグ push
   - goreleaser v2 を実行する
 
